@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LAST LIGHT | 100-Hour Indie Connect Game Jam</title>
+    <link rel="stylesheet" href="css/comic.css">
+</head>
+<body>
+
+    <div class="comic-book-wrapper">
+        <!-- Comic Page Top Header Strip -->
+        <header class="comic-header-bar">
+            <div class="comic-series-title">THE LAST LIGHT • ISSUE #1</div>
+            <div class="comic-issue-badge">100-HR INDIE CONNECT JAM</div>
+            <div style="display: flex; gap: 8px;">
+                <button id="muteBtn" class="comic-btn comic-btn-secondary" style="font-size: 13px; padding: 3px 10px;">🔊 MUTE</button>
+                <button id="restartBtn" class="comic-btn comic-btn-secondary" style="font-size: 13px; padding: 3px 10px;">↺ RESTART</button>
+            </div>
+        </header>
+
+        <!-- Dynamic In-Game HUD -->
+        <div class="comic-hud-bar">
+            <span id="hudChapter" class="hud-chapter">Page 1: The Dark Street</span>
+            <span id="hudObjective" class="hud-objective">Kindle all 3 Street Lamps with [SPACE] Flare.</span>
+        </div>
+
+        <!-- 2D Canvas Viewport -->
+        <canvas id="gameCanvas" width="960" height="640"></canvas>
+
+        <!-- Footer / Attribution -->
+        <footer class="comic-footer-bar">
+            <span>Repo: <a href="https://github.com/coders-16/the-last-light" target="_blank">github.com/coders-16/the-last-light</a></span>
+            <span>Team-3: Divya Shree • Maurya Vujini • Vidyan Sai • Rupaswi Royal Kosana • Manjusha V</span>
+        </footer>
+
+        <!-- TITLE SCREEN OVERLAY -->
+        <div id="titleOverlay" class="overlay-screen">
+            <h1 class="title-banner">THE LAST LIGHT</h1>
+            <p class="title-subheading">"A comic you can play, light you can manipulate, and a story you can't trust."</p>
+
+            <div class="theme-pill-container">
+                <div class="theme-pill">Theme 1: <span>COMIC</span></div>
+                <div class="theme-pill">Theme 2: <span>TWIST</span></div>
+                <div class="theme-pill">Theme 3: <span>LIGHT</span></div>
+            </div>
+
+            <div class="instructions-card">
+                <h3>HOW TO PLAY</h3>
+                <ul>
+                    <li><span class="key-tag">W A S D</span> or <span class="key-tag">ARROWS</span> : Move Lumi (the living spark)</li>
+                    <li><span class="key-tag">SPACE</span> : Unleash Light Flare (Kindles lamps & freezes dark shadows)</li>
+                    <li><span class="key-tag">E</span> or <span class="key-tag">MOUSE CLICK</span> : Interact / Rotate mirrors / Talk to characters</li>
+                    <li>★ Spend light carefully to reveal hidden ink, solve optical mirror puzzles, and uncover the truth.</li>
+                </ul>
+                <div class="team-roster">
+                    <strong>Team-3 (Indie Connect Jam):</strong> Divya Shree (Lead) • Maurya Vujini (UI/Audio) • Vidyan Sai (Programming) • Rupaswi Royal Kosana (Art) • Manjusha V (Puzzles)
+                </div>
+            </div>
+
+            <button id="startBtn" class="comic-btn" style="font-size: 26px; padding: 10px 42px;">OPEN COMIC BOOK ▶</button>
+        </div>
+
+        <!-- CLIMAX DUAL-CHOICE MODAL -->
+        <div id="choiceModal" class="overlay-screen hidden">
+            <h2 style="font-family: 'Bangers'; font-size: 42px; color: #ffea00; margin-bottom: 12px; letter-spacing: 2px;">
+                THE FINAL DECISION
+            </h2>
+            <p style="max-width: 650px; font-size: 15px; margin-bottom: 20px; line-height: 1.5;">
+                The truth is laid bare: Lumi was not created to fix the blackout. Lumi WAS the sentient lightning surge that triggered it. 
+                Now that you stand at the heart of the city's power grid, how will this comic book end?
+            </p>
+
+            <div class="choice-container">
+                <div class="choice-card card-dawn">
+                    <h3>THE TRUE DAWN</h3>
+                    <p>Discharge the overload into the earth sinks. Allow natural daylight to return to the blinded citizens, gently dissolving your spark with the morning breeze.</p>
+                    <button id="choiceBtnA" class="comic-btn" style="width: 100%;">CHOOSE DAWN ☀️</button>
+                </div>
+
+                <div class="choice-card card-arc">
+                    <h3>THE LIVING ARC</h3>
+                    <p>Embrace the electric surge! Ascend into the city skyline as a superhero sentinel, permanently powering the comic metropolis as "The Living Spark".</p>
+                    <button id="choiceBtnB" class="comic-btn" style="width: 100%; background: #06d6a0;">CHOOSE ARC ⚡</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENDING OVERLAY -->
+        <div id="endingOverlay" class="overlay-screen hidden">
+            <div class="ending-box">
+                <h2 id="endingTitle" class="ending-title">ENDING REACHED</h2>
+                <div id="endingText" class="ending-text"></div>
+                <div id="endingSubtext" class="ending-subtext"></div>
+                <button onclick="location.reload()" class="comic-btn" style="font-size: 20px; padding: 8px 30px;">PLAY AGAIN ↺</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT INCLUDES -->
+    <script src="js/engine/audio.js"></script>
+    <script src="js/engine/particles.js"></script>
+    <script src="js/engine/lighting.js"></script>
+    <script src="js/comic/comic_fx.js"></script>
+    <script src="js/comic/dialogue.js"></script>
+    <script src="js/engine/input.js"></script>
+    <script src="js/gameplay/entities.js"></script>
+    <script src="js/gameplay/levels.js"></script>
+    <script src="js/gameplay/game.js"></script>
+</body>
+</html>
