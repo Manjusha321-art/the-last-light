@@ -1,3 +1,7 @@
+Playable Game URL:
+https://manjusha321-art.github.io/the-last-light/
+GitHub Repository:
+https://github.com/Manjusha321-art/the-last-light
 # THE LAST LIGHT ⚡
 
 > *"A comic you can play, light you can manipulate, and a story you can't trust."*
