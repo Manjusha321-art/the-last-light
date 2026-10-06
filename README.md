@@ -8,19 +8,6 @@
 **Playable Itch.io Build:** [coders-16.itch.io/the-last-light](https://coders-16.itch.io/the-last-light)  
 
 ---
-
-## 👥 The Team (Team-3)
-
-| Member | Role |
-| :--- | :--- |
-| **Divya Shree (Team Lead)** | Game direction, gameplay systems, integration |
-| **Maurya Vujini** | UI, dialogue system, audio coordination and QA |
-| **Vidyan Sai** | Programming, light mechanics and interaction systems |
-| **Rupaswi Royal Kosana** | Art direction, comic panels and visual assets |
-| **Manjusha V** | Puzzle design, level flow and gameplay testing |
-
----
-
 ## 💡 How The Three Themes Are Implemented
 
 ### 1. Theme: COMIC 📖
